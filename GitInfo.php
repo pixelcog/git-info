@@ -82,7 +82,7 @@ class GitInfo {
 	public function parseOriginInfo($origin, $commit) {
 		$remote = array();
 		
-		if (preg_match('#^(?:(?:git|https?)://)?(?:[^@]*?@)?(bitbucket.org|github.com)[:/]([^/]*?)/([^/]*?).git$#i', $origin, $match)) {
+		if (preg_match('#^(?:(?:git|https?)://)?(?:[^@]*?@)?(bitbucket.org|github.com)[:/]([^/]*?)/([^/]*?)(?:.git)?$#i', $origin, $match)) {
 			$remote['host'] = $match[1];
 			$remote['repo'] = $match[2].'/'.$match[3];
 			
