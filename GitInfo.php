@@ -2,7 +2,7 @@
 /**
  * PixelCog Web Services
  *
- * @copyright Copyright 2012, PixelCog Inc. (http://pixelcog.com) All Rights Reserved
+ * @copyright Copyright 2013, PixelCog Inc. (http://pixelcog.com) All Rights Reserved
  */
 
 namespace app\extensions;
