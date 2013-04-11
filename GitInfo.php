@@ -21,11 +21,15 @@ class GitInfo {
 		$this->_path = $path;
 	}
 	
+	public function getCommit($path = null) {
+		return $this->_execute('git rev-parse HEAD', $path, '');
+	}
+	
 	public function getInfo($path = null) {
 		
 		$data = array(
 			'fullpath' => $this->_execute('pwd', $path, ''),
-			'commit'   => $this->_execute('git rev-parse HEAD', $path, ''),
+			'commit'   => $this->getCommit($path),
 			'origin'   => $this->_execute('git config --get remote.origin.url', $path, ''),
 			'branch'   => $this->getBranch($path),
 			'comment'  => $this->getCommitMessage($path)
